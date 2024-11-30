@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">添加员工</h3>
+
+    </div>
+    <div class="panel-body" >
+        <form method="post" >
+            {% csrf_token %}
+            <div class="form-group" >
+                <label for="exampleInputEmail1">姓名</label>
+                <input type="text" class="form-control" id="department_name" placeholder="姓名" name="user">
+            </div>
+            <div class="form-group" >
+                <label for="exampleInputEmail1">年龄</label>
+                <input type="text" class="form-control" id="department_name" placeholder="年龄" name="age">
+            </div>
+             <div class="form-group" >
+                <label for="exampleInputEmail1" >性别</label>
+                 <select class="form-control" name="gender">
+                     <option value="1">男</option>
+                     <option value="2">女</option>
+                 </select>
+            </div>
+            <div class="form-group" >
+
+                <label for="exampleInputEmail1" >部门</label>
+                 <select class="form-control" name="depart">
+                     {% for item in depart_list %}
+                         <option value="{{ item.id }}">{{ item.title }}</option>
+                     {% endfor %}
+                 </select>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">入职时间</label>
+                <input type="text" class="form-control" id="createtime" placeholder="xx年xx月xx日" name="createtime">
+
+            </div>
+            <div class="form-group" >
+                <label for="exampleInputEmail1" >密码</label>
+                <input type="text" class="form-control" id="department_name" placeholder="密码" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+            <a  class="btn btn-danger" href="/user/list">返回</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block time %}
+<script>
+    $(document).ready(function () {
+        $('#createtime').datepicker({
+            // 这里可以配置各种datepicker的参数，比如格式、语言等
+            format: "yyyy/mm/dd",
+            language:'zh-CN',
+            autoclose: 'true'
+        });
+    });
+</script>
+{% endblock %}

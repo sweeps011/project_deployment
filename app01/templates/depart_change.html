@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">修改部门名</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{ row_object.title }}" name="title">
+  </div>
+
+    <button type="submit" class="btn btn-danger">修改</button>
+    <a class="btn btn-danger" href="/depart/list">返回</a>
+</form>
+{% endblock %}
