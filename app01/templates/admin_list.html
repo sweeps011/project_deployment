@@ -13,7 +13,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="管理员名" name="search">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"  href="http://localhost:8000/admin/list?search={{ queryset.username }}">
+            <button class="btn btn-default" type="submit"  href="/admin/list?search={{ queryset.username }}">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
           </span>
@@ -53,9 +53,9 @@
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*****</font></font>
                         </td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            <a class="btn btn-primary btn-xs" href="http://localhost:8000/admin/{{ obj.id }}/change">更改用户名</a>
-                            <a class="btn btn-danger btn-xs" href="http://localhost:8000/admin/change/{{ obj.id }}/password">重置密码</a>
-                            <a class="btn btn-danger btn-xs" href="http://localhost:8000/admin/delete?nid={{ obj.id }}">删除</a>
+                            <a class="btn btn-primary btn-xs" href="/admin/{{ obj.id }}/change">更改用户名</a>
+                            <a class="btn btn-danger btn-xs" href="/admin/change/{{ obj.id }}/password">重置密码</a>
+                            <a class="btn btn-danger btn-xs" href="/admin/delete?nid={{ obj.id }}">删除</a>
                         </font></font>
                         </td>
                     </tr>

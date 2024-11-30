@@ -17,7 +17,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="部门名" name="search">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"  href="http://localhost:8000/depart/list?search={{ queryset.title }}">
+            <button class="btn btn-default" type="submit"  href="/depart/list?search={{ queryset.title }}">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
           </span>
@@ -55,8 +55,8 @@
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ obj.title}}</font></font>
                         </td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            <a class="btn btn-primary btn-xs" href="http://localhost:8000/depart/{{ obj.id }}/change">编辑</a>
-                            <a class="btn btn-danger btn-xs" href="http://localhost:8000/depart/delete?nid={{ obj.id }}">删除</a>
+                            <a class="btn btn-primary btn-xs" href="/depart/{{ obj.id }}/change">编辑</a>
+                            <a class="btn btn-danger btn-xs" href="/depart/delete?nid={{ obj.id }}">删除</a>
                         </font></font>
                         </td>
                     </tr>

@@ -17,6 +17,6 @@ RUN pip install -r requirements.txt
 ENV PYTHONUNBUFFERED=1
 
 # 启动 Django 服务器
-CMD ["python", "manage.py", "runserver", "172.17.0.2:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 
